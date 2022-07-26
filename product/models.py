@@ -1,5 +1,5 @@
 from io import BytesIO
-from msilib.schema import File
+from django.core.files import File
 from PIL import Image
 from django.db import models
 
