@@ -16,7 +16,7 @@ def start_order(request):
     total_price = 0
 
     items = []
-    YOUR_URL = 'http://127.0.0.1:9000'
+    YOUR_URL = 'https://djebook.herokuapp.com/'
 
     for item in cart:
         product = item['product']
