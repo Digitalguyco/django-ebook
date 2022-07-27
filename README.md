@@ -19,9 +19,9 @@ Steps:
 `python manage.py runserver`
 
 ##  Project Snapshot
-<img src="es.png" width="300px"> <img src="es1png.png" width="300px">
+<img src="es.png" width="500px"> <img src="es1png.png" width="500px"> <img src="es2.png" width="500px">
 
-<img src="es2.png" width="300px">
+
 
 # Check The Project link | [Offical website link](https://djebook.herokuapp.com/)
   ## [LINK](https://djebook.herokuapp.com/)
