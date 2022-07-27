@@ -19,7 +19,7 @@ Steps:
 `python manage.py runserver`
 
 ##  Project Snapshot
-<img src="es.png" width="500px"> <img src="es1png.png" width="500px"> <img src="es2.png" width="500px">
+<img src="es.png" width="500px"> <img src="es1png.png" width="500px"> <img src="es2.png" width="500px"> <img src="es3.png" width="500px">
 
 
 
