@@ -10,15 +10,16 @@ from cart.cart import Cart
 
 from .models import Order, OrderItem
 
+# Start Order View
 def start_order(request):
-    cart = Cart(request)
+    cart = Cart(request) # Cart Instance
     data = json.loads(request.body)
     total_price = 0
 
-    items = []
+    items = [] # items
     YOUR_URL = 'https://djebook.herokuapp.com'
 
-    for item in cart:
+    for item in cart: # loop The cart instance
         product = item['product']
         total_price += product.price * int(item['quantity'])
 
@@ -32,17 +33,17 @@ def start_order(request):
             },
             'quantity': item['quantity']
         }
-        )
+        ) # apped data ot items 
 
-    stripe.api_key = settings.STRIPE_API_KEY_HIDDEN
+    stripe.api_key = settings.STRIPE_API_KEY_HIDDEN # Stripe  SECRET ACCESS KEY
     session  = stripe.checkout.Session.create(
         payment_method_types = ['card'],
         line_items = items,
         mode='payment',
         success_url = f'{YOUR_URL}/cart/success/',
         cancel_url =f'{YOUR_URL}/cart/'
-    )
-    payment_intent = session.payment_intent
+    ) # Creating Checkout Session
+    payment_intent = session.payment_intent # Payment 
 
     order = Order.objects.create(
         user = request.user,
@@ -56,7 +57,7 @@ def start_order(request):
         payment_intent=payment_intent,
         paid=True,
         paid_amount=total_price
-    )
+    ) # Creating Oreder
 
     for item in cart:
         product = item['product']
@@ -68,8 +69,8 @@ def start_order(request):
             product=product, 
             price=price, 
             quantity=quantity
-        )
+        ) # Creating OrderItem
 
-    cart.clear()
+    cart.clear() # Clear Cart 
 
-    return JsonResponse({'session': session, 'order':payment_intent})
+    return JsonResponse({'session': session, 'order':payment_intent}) # Return for Js side.

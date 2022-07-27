@@ -4,6 +4,8 @@ from django.contrib.auth import views
 from main.views import *
 from product.views import product
 
+
+#  Main Url Patterns
 urlpatterns = [
     path('', index, name='index'),
     path('signup/', signup, name='signup'),

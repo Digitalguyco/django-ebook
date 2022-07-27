@@ -2,10 +2,13 @@ from django.conf import settings
 
 from product.models import Product
 
+
+#  Cart Object
+
 class Cart(object):
     def __init__(self, request):
-        self.session = request.session
-        cart = self.session.get(settings.CART_SESSION_ID)
+        self.session = request.session # get  Broswer session 
+        cart = self.session.get(settings.CART_SESSION_ID)# get  cart session 
 
         if not cart:
             cart = self.session[settings.CART_SESSION_ID] = {}
