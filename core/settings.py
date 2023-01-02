@@ -105,9 +105,9 @@ DATABASES = {
 }
 
 # heroku database settings
-import dj_database_url
-DATABASES = {}
-DATABASES['default'] = dj_database_url.config(conn_max_age=600, ssl_require=True)
+# import dj_database_url
+# DATABASES = {}
+# DATABASES['default'] = dj_database_url.config(conn_max_age=600, ssl_require=True)
 
 # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators
@@ -175,8 +175,8 @@ DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 
 
 #  Heroku settings
-import django_heroku
-django_heroku.settings(locals(), staticfiles=False)
+# import django_heroku
+# django_heroku.settings(locals(), staticfiles=False)
 
 
 
