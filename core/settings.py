@@ -24,9 +24,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['.herokuapp.com'] # heroku app url
+ALLOWED_HOSTS = ['*'] # heroku app url
 
 # Auth URLS
 LOGOUT_REDIRECT_URL = '/'
